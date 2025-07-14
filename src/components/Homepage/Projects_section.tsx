@@ -1,56 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logoImage from "../../assets/images/Logo.png";
-import project1 from "../../assets/images/ImageDuanMau.png";
+import ProjectApi from "../../services/ProjectApi";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Projects_section = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Dummy projects data - bạn có thể thay thế bằng data thật
-  const projects = [
-    {
-      id: 1,
-      title: "Khu biệt thự cao cấp Cocoland",
-      area: "133,4 ha",
-      location: "Khu Công nghiệp và Đô thị Mỹ Phước III",
-      image: project1,
-      status: "Đang mở bán",
-    },
-    {
-      id: 2,
-      title: "Khu biệt thự cao cấp Cocoland",
-      area: "133,4 ha",
-      location: "Khu Công nghiệp và Đô thị Mỹ Phước III",
-      image: project1,
-      status: "Sắp mở bán",
-    },
-    {
-      id: 3,
-      title: "Khu biệt thự cao cấp Cocoland",
-      area: "133,4 ha",
-      location: "Khu Công nghiệp và Đô thị Mỹ Phước III",
-      image: project1,
-      status: "Đang mở bán",
-    },
-    {
-      id: 4,
-      title: "Khu resort nghỉ dưỡng cao cấp",
-      area: "98,7 ha",
-      location: "Khu du lịch sinh thái Đại Nam",
-      image: project1,
-      status: "Đang mở bán",
-    },
-    {
-      id: 5,
-      title: "Chung cư thông minh SmartHome",
-      area: "45,2 ha",
-      location: "Trung tâm thành phố Thủ Dầu Một",
-      image: project1,
-      status: "Sắp mở bán",
-    },
-  ];
+  const [projects, setProjects] = useState<any[]>([]);
+const Navigate = useNavigate();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await ProjectApi.getAll({});
+        setProjects(response.data); // Đảm bảo API trả về { data: [...] }
+      } catch (error) {
+        console.error("Lỗi khi lấy danh sách dự án:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 3 >= projects.length ? 0 : prev + 1));
+    setCurrentSlide((prev) =>
+      prev + 3 >= projects.length ? 0 : prev + 1
+    );
   };
 
   const prevSlide = () => {
@@ -60,8 +32,6 @@ const Projects_section = () => {
   };
 
   const visibleProjects = projects.slice(currentSlide, currentSlide + 3);
-
-  // Fill remaining slots if needed
   while (visibleProjects.length < 3 && projects.length > 3) {
     const remainingIndex =
       (currentSlide + visibleProjects.length) % projects.length;
@@ -76,25 +46,13 @@ const Projects_section = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800">
             Dự án trọng điểm
           </h2>
-
-          {/* Navigation Arrows */}
           <div className="flex space-x-3">
             <button
               onClick={prevSlide}
               className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors duration-300"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
@@ -102,18 +60,8 @@ const Projects_section = () => {
               onClick={nextSlide}
               className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors duration-300"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
@@ -122,17 +70,16 @@ const Projects_section = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
             <div
-              key={`${project.id}-${index}`}
+              key={`${project.MaDA}-${index}`}
               className="group cursor-pointer transform transition-all duration-300 hover:scale-105"
             >
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={project.ImageUrl}
+                    alt={project.TenDA}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-
                   <div className="absolute bg-opacity-10 group-hover:bg-opacity-5 transition-all duration-300"></div>
                   <div className="absolute top-4 right-4">
                     <div className="bg-white rounded-full p-2 shadow-lg">
@@ -149,7 +96,7 @@ const Projects_section = () => {
                           : "bg-orange-500 text-white"
                       }`}
                     >
-                      {project.status}
+                      {project.status || "Đang mở bán"}
                     </span>
                   </div>
                 </div>
@@ -157,54 +104,28 @@ const Projects_section = () => {
                 {/* Project Info */}
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                    {project.title}
+                    {project.TenDA}
                   </h3>
-
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center">
-                      <svg
-                        className="w-4 h-4 mr-2 text-blue-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 7v10c0 2.21 3.79 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.79 4 8 4s8-1.79 8-4M4 7c0-2.21 3.79-4 8-4s8 1.79 8 4"
-                        />
+                      <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.79 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.79 4 8 4s8-1.79 8-4M4 7c0-2.21 3.79-4 8-4s8 1.79 8 4" />
                       </svg>
-                      <span>Tổng diện tích: {project.area}</span>
+                      <span>Tổng diện tích: {project.DienTich || "Chưa cập nhật"}</span>
                     </div>
 
                     <div className="flex items-start">
-                      <svg
-                        className="w-4 h-4 mr-2 mt-0.5 text-red-500 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
+                      <svg className="w-4 h-4 mr-2 mt-0.5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="leading-tight">{project.location}</span>
+                      <span className="leading-tight">{project.DiaChi}</span>
                     </div>
                   </div>
 
                   {/* Call to Action */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
-                    <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                     <button onClick={()=>Navigate('/duAn')} className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                       Xem chi tiết
                     </button>
                   </div>

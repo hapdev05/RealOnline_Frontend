@@ -1,5 +1,5 @@
-import Header_menu from "../components/Header_menu";
-import Footer_menu from "../components/Footer_menu";
+import Header_menu from "../components/Menu/Header_menu";
+import Footer_menu from "../components/Menu/Footer_menu";
 type MainLayoutProps = {
   children: any;
 };

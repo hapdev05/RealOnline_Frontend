@@ -24,8 +24,12 @@ const TinTuc = () => {
 
   return (
     <div className="tintuc-page">
+  <h2 style={{fontSize : '2.5rem ' ,fontWeight :'bold' }}>Tổng mặt bằng biệt thự cao cấp Cocoland</h2>
+
     <div className="tintuc-container">
+
   <div className="left-section">
+    
     <div className="slide-large">
       <img src={images[currentLarge]} alt="Slide lớn" className="slide-image" />
     </div>

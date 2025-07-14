@@ -1,5 +1,4 @@
 import Footer_menu from "../components/Menu/Footer_menu";
-import Header_menu from "../components/Menu/Header_menu";
 import Banner_section from "../components/Homepage/Banner_section";
 import Services_section from "../components/Homepage/Services_section";
 import Cashback_section from "../components/Homepage/Cashback_section";
@@ -9,6 +8,7 @@ import BatDongSanGiaTot from "../components/Homepage/BatDongSanGiaTot";
 import TinTuc from "../components/Homepage/TinTuc";
 
 const Homepage = () => {
+  
   return (
     <div className="">
       <Banner_section />

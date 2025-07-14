@@ -63,7 +63,7 @@ export default function ViTri() {
         <li>Với diện tích 18 ha tọa lạc tại khu Công nghiệp và Đô thị Mỹ Phước III.</li>
         <li>Kết nối trực tiếp với quốc lộ 14, chỉ hơn 1 phút đi xe.</li>
       </ul>
-
+    
       <iframe
         width="100%"
         height="450"

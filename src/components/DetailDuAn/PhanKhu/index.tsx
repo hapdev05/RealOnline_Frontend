@@ -1,4 +1,5 @@
 import './style.css'
+import { Navigate, useNavigate } from 'react-router-dom';
 interface CardData {
     id: number;
     image: string;
@@ -7,8 +8,9 @@ interface CardData {
     style: string;
     type: string;
   }
-  
   export default function PhanKhu({ cards }: { cards: CardData[] }) {
+  const Navigate = useNavigate();
+
     return (
       <div className="inform-card">
         {cards.map((card) => (
@@ -22,7 +24,7 @@ interface CardData {
             <p className="bold-text">{card.style}</p>
             <p className="light-text">Loại hình</p>
             <p className="bold-text">{card.type}</p>
-            <button className="detail-btn">Xem chi tiết</button>
+            <button onClick={()=>Navigate('/phanKhu')} className="detail-btn">Xem chi tiết</button>
           </div>
         ))}
       </div>
