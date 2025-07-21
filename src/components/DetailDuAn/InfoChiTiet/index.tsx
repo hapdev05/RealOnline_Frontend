@@ -1,5 +1,5 @@
 import './style.css'
-export default function InfoChiTiet() {
+export default function InfoChiTietDuAn() {
     return (
       <div className="info-section">
         <h3>Thông tin chi tiết</h3>

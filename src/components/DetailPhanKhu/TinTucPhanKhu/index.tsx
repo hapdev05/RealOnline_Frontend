@@ -25,11 +25,11 @@ const TinTucPhanKhu = () => {
   return (
     <div className="tintuc-page">
   <h2 style={{fontSize : '2.5rem ' ,fontWeight :'bold' }}>Tin Tức</h2>
+  <p>Thông tin ưu đãi</p>
 
     <div className="tintuc-container">
 
   <div className="left-section">
-    <p>Thông tin ưu đãi</p>
     <div className="slide-large">
       <img src={images[currentLarge]} alt="Slide lớn" className="slide-image" />
     </div>
@@ -40,7 +40,7 @@ const TinTucPhanKhu = () => {
     </div>
   </div>
 
-  <div className="right-section">
+  <div className="right-section-phan-khu">
     <div className="slide-small-wrapper">
       <div className="slide-small">
         <img src={images[currentSmall1]} alt="Slide nhỏ 1" className="slide-image" />

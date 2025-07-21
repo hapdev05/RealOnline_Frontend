@@ -7,7 +7,7 @@
 
 .slider-container {
   width: 100vw;
-  height: 90vh; 
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -24,48 +24,6 @@
   transition: opacity 0.5s ease;
 }
 
-.top-left-text {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: white;
-  font-size: 1em;
-  padding: 5px 10px;
-  border-radius: 4px;
-}
-
-.back-link {
-  color: #f47f29;
-  text-decoration: none;
-  font-size: 0.9em;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}
-
-.bottom-left-text {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.bottom-left-text h3 {
-  font-size: 1.5em;
-  margin: 0;
-  font-weight: bold;
-}
-
-.bottom-left-text p {
-  font-size: 1em;
-  margin: 5px 0 0;
-  font-weight: normal;
-}
-
-/* Album ảnh nhỏ */
 .album-controls {
   width: 100vw;
   display: flex;
@@ -73,15 +31,15 @@
   justify-content: center;
   gap: 20px;
   position: relative;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
 }
 
 .album {
   overflow: hidden;
   width: 100%;
-  max-width: 1260px; 
+  max-width: 1260px;
   position: relative;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .album-inner {
@@ -142,42 +100,11 @@
   cursor: pointer;
   font-size: 14px;
   transition: color 0.3s ease;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .image-count-overlay:hover {
   color: #f47f29;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 4px;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
-}
-
-.dropdown-image:hover {
-  border-color: #f47f29;
 }
 
 .fullscreen-overlay {
@@ -226,110 +153,20 @@
 }
 
 .left-section {
-  flex: 0 0 70%; 
+  flex: 0 0 70%;
   padding-right: 20px;
 }
 
 .left-section h2 {
-  font-size: 2.0em; 
+  font-size: 2.0em;
   margin-bottom: 15px;
   font-weight: bold;
 }
+
 .left-section h4 {
   font-size: 1.5em;
   margin-bottom: 15px;
   font-weight: bold;
-}
-.left-section .content-detail {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .slider-container {
-    height: 60vh;
-  }
-
-  .album-inner img {
-    width: 140px;
-    height: 70px;
-  }
-
-  .control-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-
-  .form {
-    flex-direction: column;
-  }
-
-  .left-section,
-  .right-section {
-    flex: none;
-    width: 100%;
-  }
-
-  .right-section {
-    margin-top: 20px;
-  }
-
-  .info-columns {
-    flex-direction: column;
-  }
-
-  .info-left,
-  .info-right {
-    flex: 0 0 100%;
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  .dropdown-image {
-    width: 60px;
-    height: 60px;
-  }
-
-  .image-count-overlay {
-    width: 35px;
-    height: 35px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider-container {
-    height: 40vh;
-  }
-
-  .album-inner img {
-    width: 100px;
-    height: 60px;
-  }
-
-  .control-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-  }
-
-  .dropdown-image {
-    width: 50px;
-    height: 50px;
-  }
-
-  .image-count-overlay {
-    width: 30px;
-    height: 30px;
-    font-size: 10px;
-  }
 }
 
 .title-with-legend {
@@ -384,10 +221,62 @@
   background-color: purple;
 }
 
-.info-form {
-  width: 100%;
-  max-width: 1200px;
-  margin: 40px auto; 
-  padding: 0 20px;   
-  box-sizing: border-box;
+@media (max-width: 768px) {
+  .slider-container {
+    height: 60vh;
+  }
+
+  .album-inner img {
+    width: 140px;
+    height: 70px;
+  }
+
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .right-section {
+    margin-top: 20px;
+  }
+
+  .image-count-overlay {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-container {
+    height: 40vh;
+  }
+
+  .album-inner img {
+    width: 100px;
+    height: 60px;
+  }
+
+  .control-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .image-count-overlay {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
 }

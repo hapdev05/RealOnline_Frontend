@@ -1,5 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
+import {
+  MdDashboard,
+  MdMiscellaneousServices,
+} from "react-icons/md";
+import { FaProjectDiagram } from "react-icons/fa";
+import { GoLocation } from "react-icons/go";
+import { GiTreeGrowth } from "react-icons/gi";
+import { HiDocumentText } from "react-icons/hi";
 import Slide1 from "../assets/images/baner1.png";
 import Slide2 from "../assets/images/khu-cong-nghiep.png";
 import Slide3 from "../assets/images/baner1.png";
@@ -11,7 +19,7 @@ import Slide8 from "../assets/images/khu-cong-nghiep.png";
 import Slide9 from "../assets/images/baner1.png";
 
 import "../styles/phankhu.css";
-import SliderWithAlbum from "../components/DetailPhanKhu/SlideAlbumPhanKhu";
+import SliderWithMiniSlides from "../components/DetailPhanKhu/SlideAlbumPhanKhu";
 import DiemNoiBatPhanKhu from "../components/DetailPhanKhu/DiemNoiBatPhanKhu";
 import InfoChiTietPhanKhu from "../components/DetailPhanKhu/InfoChiTietPhanKhu";
 import TuVanFormPhanKhu from "../components/DetailPhanKhu/TuVanPhanKhu";
@@ -55,18 +63,14 @@ const duLieuPhanKhuA = [
 
 export default function PhanKhu() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const albumRef = useRef<HTMLDivElement>(null);
 
   const handleImageClick = (image: string, index: number) => {
     setSelectedImage(image);
     setCurrentSlide(index);
     setIsFullscreen(true);
   };
-
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
   const closeFullscreen = () => {
     setIsFullscreen(false);
@@ -75,23 +79,58 @@ export default function PhanKhu() {
 
   return (
     <>
-      <SliderWithAlbum
+      {/* Slider hình ảnh */}
+      <SliderWithMiniSlides
         images={images}
         currentSlide={currentSlide}
         setCurrentSlide={setCurrentSlide}
         handleImageClick={handleImageClick}
-        isDropdownOpen={isDropdownOpen}
-        toggleDropdown={toggleDropdown}
-        albumRef={albumRef}
-        title="Phân khu dự án Cocoland"
-        subtitle="Khu đô thị và công nghiệp hiện đại"
+        title="Bộ sưu tập sản phẩm"
+        subtitle="Khám phá thiết kế và chi tiết hình ảnh"
       />
 
+      {/* Mục lục icon */}
+      <div className="phankhu-icon-section">
+        <div className="phankhu-icon-wrapper">
+          <div className="phankhu-icon-item">
+            <MdDashboard className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tổng quan</span>
+          </div>
+          <div className="phankhu-icon-item">
+            <FaProjectDiagram className="phankhu-icon" />
+            <span className="phankhu-icon-label">Phân khu</span>
+          </div>
+          <div className="phankhu-icon-item">
+            <GoLocation className="phankhu-icon" />
+            <span className="phankhu-icon-label">Vị trí</span>
+          </div>
+          <div className="phankhu-icon-item">
+            <MdMiscellaneousServices className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tiện ích</span>
+          </div>
+          <div className="phankhu-icon-item">
+            <GiTreeGrowth className="phankhu-icon" />
+            <span className="phankhu-icon-label">Cảnh quan</span>
+          </div>
+          <div className="phankhu-icon-item">
+            <HiDocumentText className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tài liệu tổng mặt bằng</span>
+          </div>
+        </div>
+      </div>
+
       {isFullscreen && selectedImage && (
-        <div className="fullscreen-overlay" onClick={closeFullscreen}>
-          <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
-            <img src={selectedImage} alt="Hình phóng to" className="fullscreen-image" />
-            <button className="close-btn" onClick={closeFullscreen}>
+        <div className="phankhu-fullscreen-overlay" onClick={closeFullscreen}>
+          <div
+            className="phankhu-fullscreen-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedImage}
+              alt="Ảnh phóng to"
+              className="phankhu-fullscreen-image"
+            />
+            <button className="phankhu-close-btn" onClick={closeFullscreen}>
               Đóng
             </button>
           </div>

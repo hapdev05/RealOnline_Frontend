@@ -1,0 +1,124 @@
+/* Right Content */
+.sanpham-content-right {
+    flex: 0 0 30%;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  
+    height: 100%;
+    max-height: 450px; /* hoặc bất kỳ chiều cao tối đa nào bạn muốn */
+    overflow-y: auto; /* nếu nội dung vượt quá thì sẽ có scroll */
+  }
+  
+  
+  .sanpham-content-right h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  
+  .sanpham-best-price {
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sanpham-best-price .label {
+    font-size: 0.9em;
+    color: #6b7280;
+  }
+  
+  .sanpham-best-price .price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .sanpham-best-price .price-original {
+    font-size: 0.9em;
+    text-decoration: line-through;
+    color: #9ca3af;
+  }
+  
+  .sanpham-date-pick {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .sanpham-date-pick button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .sanpham-date-pick button:hover {
+    background-color: #f0f9ff;
+    border-color: #3b82f6;
+    color: #2563eb;
+  }
+  
+  .sanpham-booking-btn {
+    width: 100%;
+    background-color: #1f2937;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95em;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .sanpham-booking-btn:hover {
+    background-color: #111827;
+  }
+  
+  .sanpham-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .add-to-cart,
+  .buy-now {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #f47f29;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95em;
+  }
+  
+  .add-to-cart {
+    background-color: #fff;
+    color: #f47f29;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #fff7ed;
+  }
+  
+  .buy-now {
+    background-color: #f47f29;
+    color: white;
+  }
+  
+  .buy-now:hover {
+    background-color: #e07020;
+  }
+  

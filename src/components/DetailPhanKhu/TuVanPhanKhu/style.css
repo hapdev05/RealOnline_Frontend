@@ -1,79 +1,97 @@
-.contact-form-phan-khu label,
-.contact-form-phan-khu .consult-title-phan-khu,
-.contact-form-phan-khu .consent-text-phan-khu,
-.contact-form-phan-khu .or-text-phan-khu,
-.contact-form-phan-khu .call-option-phan-khu,
-.contact-form-phan-khu .chat-option-phan-khu {
-  text-align: center;
-  cursor: pointer;
-}
-
-.contact-form-phan-khu input,
-.contact-form-phan-khu textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.contact-form-phan-khu button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
+/* Container toàn form */
+.phankhu-form-wrapper {
+  max-width: 400px;
   margin: 0 auto;
+  padding: 32px 24px;
+  background-color: #f1f5f9; /* nền nhạt */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: sans-serif;
 }
 
-.contact-form-phan-khu button:hover {
-  background-color: #0056b3;
+.phankhu-form-title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 20px;
 }
 
-.form-contact-phan-khu {
+.phankhu-benefit-text {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.phankhu-form input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Chính sách */
+.phankhu-consent-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 12px 0;
+}
+
+/* Button */
+.phankhu-form button {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.phankhu-form button:hover {
+  background-color: #1e40af;
+}
+
+/* Hoặc */
+.phankhu-or-text {
+  text-align: center;
+  margin: 16px 0;
+  color: #9ca3af;
+}
+
+/* Phần liên hệ */
+.phankhu-form-contact {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  padding: 15px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.phankhu-call-option,
+.phankhu-chat-option {
+  flex: 1;
+  background-color: #e5e7eb;
+  padding: 12px;
   border-radius: 8px;
-}
-
-.form-contact-phan-khu .call-option-phan-khu,
-.form-contact-phan-khu .chat-option-phan-khu {
-  flex: 0 0 48%;
-  margin: 0;
-  font-weight: bold;
-  color: #333;
   text-align: center;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  font-weight: bold;
+  color: #111827;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
-.form-contact-phan-khu .call-option-phan-khu {
-  margin-right: 4%;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  .phankhu-form-wrapper {
+    padding: 24px 16px;
+  }
 
-.consult-title-phan-khu {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.benefit-text-phan-khu {
-  font-size: 0.9em;
-  margin: 5px 0;
-}
-
-.consent-text-phan-khu {
-  font-size: 0.8em;
-  color: #666;
-  margin: 10px 0;
-}
-
-.or-text-phan-khu {
-  font-size: 1em;
-  margin: 10px 0;
+  .phankhu-form-contact {
+    flex-direction: column;
+    gap: 12px;
+  }
 }

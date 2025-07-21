@@ -12,6 +12,8 @@ import searchIcon from "../../assets/images/Icon_search.png";
 import shopIcon from "../../assets/images/Icon_shop.png";
 import trellIcon from "../../assets/images/Icon_trello.png";
 import { useNavigate } from "react-router-dom";
+import Auth_Components from "../Login/Auth_Components";
+import SignUp_Components from "../Login/SignUp_Components";
 
 const Header_menu = () => {
   const [isProjectDropdownOpen, setIsProjectDropdownOpen] = useState(false);
@@ -22,6 +24,8 @@ const Header_menu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const [isSearchLoading, setIsSearchLoading] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const navigate = useNavigate();
 
   // Function to close all dropdowns
@@ -130,26 +134,25 @@ const Header_menu = () => {
                 <span>Màu nền</span>
               </span>
               <span>|</span>
-              <span className="flex items-center space-x-1">
+              <span className="flex items-center space-x-1 relative"  >
                 <img src={accountIcon} alt="Account" className="w-5 h-5" />
-                <span className="text-red-400">Đăng ký</span>
+                <span className="text-red-400 cursor-pointer" onClick={() => setIsSignUpOpen(true)}>Đăng ký</span>
+                <SignUp_Components isOpen={isSignUpOpen} onClose={() => setIsSignUpOpen(false)} onSwitchToLogin={() => {setIsSignUpOpen(false); setIsLoginOpen(true);}} />
                 <span>/</span>
-                <span>Đăng nhập</span>
+                <div className="relative cursor-pointer">
+                <span onClick={() => setIsLoginOpen(true)}>Đăng nhập</span>
+                <Auth_Components isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+                </div>
               </span>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Main Header */}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
           <div className="flex items-center">
             <img src={logoImage} alt="TDC Logo" className="h-10 lg:h-[68px]" />
           </div>
-
-          {/* Desktop Search Bar */}
           <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
             <div className="relative w-full">
               <div className="flex">
@@ -570,9 +573,15 @@ const Header_menu = () => {
             <div className="border-b border-gray-600 pb-4 mb-4">
               <div className="flex items-center space-x-2 text-white mb-3">
                 <img src={accountIcon} alt="Account" className="w-5 h-5" />
-                <span className="text-red-400">Đăng ký</span>
+                <div className="relative cursor-pointer">
+                <span className="text-red-400 cursor-pointer" onClick={() => setIsSignUpOpen(true)}>Đăng ký</span>
+                <SignUp_Components isOpen={isSignUpOpen} onClose={() => setIsSignUpOpen(false)} onSwitchToLogin={() => {setIsSignUpOpen(false); setIsLoginOpen(true);}} />
                 <span>/</span>
-                <span>Đăng nhập</span>
+                </div>
+                <div className="relative cursor-pointer">
+                <span onClick={() => setIsLoginOpen(true)}>Đăng nhập</span>
+                <Auth_Components isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+                </div>
               </div>
               <div className="flex items-center space-x-4 text-white text-sm">
                 <span className="flex items-center space-x-1">
