@@ -1,0 +1,302 @@
+.table-container {
+  width: 100%;
+  height: auto;
+}
+
+.table-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.table-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.status {
+  font-size: 14px;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 12px 0;
+}
+
+.table-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.image {
+  font-weight: bold;
+  color: #444;
+  width: 300px;
+  height: auto;
+}
+
+.detail-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.price,
+.block,
+.area,
+.type,
+.paid,
+.remaining {
+  font-size: 14px;
+  color: #444;
+}
+
+.price {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.block {
+  color: #7f8c8d;
+}
+
+.area,
+.type {
+  color: #34495e;
+}
+
+.paid {
+  color: #27ae60;
+}
+
+.remaining {
+  color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-item {
+    padding: 12px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 14px;
+  }
+
+  .status {
+    font-size: 12px;
+  }
+
+  .table-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-code {
+    margin-bottom: 8px;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+    gap: 6px;
+  }
+
+  .price,
+  .block,
+  .area,
+  .type,
+  .paid,
+  .remaining {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .table-item {
+    padding: 14px;
+  }
+
+  .table-details {
+    gap: 12px;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột trên tablet */
+    gap: 6px;
+  }
+
+  .price,
+  .block,
+  .area,
+  .type,
+  .paid,
+  .remaining {
+    font-size: 13px;
+  }
+}
+
+/* CSS cho Menu */
+.profile-menu-container {
+  width: 25%;
+  background-color: #f4f4f4;
+  padding: 16px;
+  height: 100vh;
+}
+
+.profile-menu-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.profile-menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.profile-menu-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.profile-menu-section {
+  margin-top: 16px;
+}
+
+.profile-menu-item {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile-menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+.profile-submenu {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+.profile-submenu-item {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile-submenu-item.active {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.profile-submenu-item:hover {
+  background-color: #dcdcdc;
+}
+
+.profile-menu-divider {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 16px 0;
+}
+
+.profile-menu-logout {
+  padding: 12px;
+  font-size: 16px;
+  color: #e74c3c;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile-menu-logout:hover {
+  background-color: #f5e6e6;
+}
+
+/* Responsive cho Menu */
+@media (max-width: 768px) {
+  .profile-menu-container {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .profile-menu-header {
+    margin-bottom: 16px;
+  }
+
+  .profile-menu-title {
+    font-size: 20px;
+  }
+
+  .profile-menu-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .profile-submenu-item {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profile-menu-container {
+    width: 30%;
+  }
+
+  .profile-menu-title {
+    font-size: 22px;
+  }
+
+  .profile-menu-item {
+    padding: 11px;
+    font-size: 15px;
+  }
+
+  .profile-submenu-item {
+    padding: 7px 11px;
+    font-size: 13px;
+  }
+}

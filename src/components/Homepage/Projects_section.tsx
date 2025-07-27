@@ -109,9 +109,9 @@ const Navigate = useNavigate();
 
                   {/* Call to Action */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
-                     <button onClick={()=>Navigate('/duAn')} className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-                      Xem chi tiết
-                    </button>
+                     <button onClick={()=>Navigate('/du-an')} className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
+                      Xem chi tiết 
+                    </button> 
                   </div>
                 </div>
               </div>

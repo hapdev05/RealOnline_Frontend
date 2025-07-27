@@ -23,7 +23,7 @@ export default function PhanKhuA({ cards }: { cards: CardData[] }) {
           <p className="phanKhuA-value">{card.acreage}</p>
           <p className="phanKhuA-label">Giá bán</p>
           <p className="phanKhuA-value">{card.price}</p>
-          <button onClick={() => navigate('/phanKhu')} className="phanKhuA-button">
+          <button onClick={() => navigate('/san-pham')} className="phanKhuA-button">
             Xem chi tiết
           </button>
         </div>

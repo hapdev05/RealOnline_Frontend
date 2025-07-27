@@ -28,7 +28,7 @@ const TinTuc = () => {
 
     <div className="tintuc-container">
 
-  <div className="left-section">
+  <div className="tintuc-left-section">
     
     <div className="slide-large">
       <img src={images[currentLarge]} alt="Slide lớn" className="slide-image" />

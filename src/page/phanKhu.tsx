@@ -138,7 +138,7 @@ export default function PhanKhu() {
       )}
 
       <div className="form">
-        <div className="left-section">
+        <div className="phankhu-left-section">
           <h2>Thông tin chi tiết</h2>
           <InfoChiTietPhanKhu />
           <DiemNoiBatPhanKhu />

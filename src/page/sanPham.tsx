@@ -71,32 +71,32 @@ const SanPham: React.FC = () => {
         title="Bộ sưu tập sản phẩm"
         subtitle="Khám phá thiết kế và chi tiết hình ảnh"
       />
-      {/* Mục lục icon */}
-      <div className="sanpham-icon-section">
-        <div className="sanpham-icon-wrapper">
-          <div className="sanpham-icon-item">
-            <MdDashboard className="sanpham-icon" />
-            <span className="sanpham-icon-label">Tổng quan</span>
+          {/* Mục lục icon */}
+      <div className="phankhu-icon-section">
+        <div className="phankhu-icon-wrapper">
+          <div className="phankhu-icon-item">
+            <MdDashboard className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tổng quan</span>
           </div>
-          <div className="sanpham-icon-item">
-            <FaProjectDiagram className="sanpham-icon" />
-            <span className="sanpham-icon-label">Phân khu</span>
+          <div className="phankhu-icon-item">
+            <FaProjectDiagram className="phankhu-icon" />
+            <span className="phankhu-icon-label">Phân khu</span>
           </div>
-          <div className="sanpham-icon-item">
-            <GoLocation className="sanpham-icon" />
-            <span className="sanpham-icon-label">Vị trí</span>
+          <div className="phankhu-icon-item">
+            <GoLocation className="phankhu-icon" />
+            <span className="phankhu-icon-label">Vị trí</span>
           </div>
-          <div className="sanpham-icon-item">
-            <MdMiscellaneousServices className="sanpham-icon" />
-            <span className="sanpham-icon-label">Tiện ích</span>
+          <div className="phankhu-icon-item">
+            <MdMiscellaneousServices className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tiện ích</span>
           </div>
-          <div className="sanpham-icon-item">
-            <GiTreeGrowth className="sanpham-icon" />
-            <span className="sanpham-icon-label">Cảnh quan</span>
+          <div className="phankhu-icon-item">
+            <GiTreeGrowth className="phankhu-icon" />
+            <span className="phankhu-icon-label">Cảnh quan</span>
           </div>
-          <div className="sanpham-icon-item">
-            <HiDocumentText className="sanpham-icon" />
-            <span className="sanpham-icon-label">Tài liệu tổng mặt bằng</span>
+          <div className="phankhu-icon-item">
+            <HiDocumentText className="phankhu-icon" />
+            <span className="phankhu-icon-label">Tài liệu tổng mặt bằng</span>
           </div>
         </div>
       </div>

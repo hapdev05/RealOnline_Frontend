@@ -11,6 +11,7 @@ import accountIcon from "../../assets/images/Icon_account.png";
 import searchIcon from "../../assets/images/Icon_search.png";
 import shopIcon from "../../assets/images/Icon_shop.png";
 import trellIcon from "../../assets/images/Icon_trello.png";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Header_menu = () => {
@@ -146,7 +147,9 @@ const Header_menu = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
+            <Link to={'/'}>
             <img src={logoImage} alt="TDC Logo" className="h-10 lg:h-[68px]" />
+            </Link>
           </div>
 
           {/* Desktop Search Bar */}

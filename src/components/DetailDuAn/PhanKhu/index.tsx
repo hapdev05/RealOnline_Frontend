@@ -24,7 +24,7 @@ interface CardData {
             <p className="bold-text">{card.style}</p>
             <p className="light-text">Loại hình</p>
             <p className="bold-text">{card.type}</p>
-            <button onClick={()=>Navigate('/phanKhu')} className="detail-btn">Xem chi tiết</button>
+            <button onClick={()=>Navigate('/phan-khu')} className="detail-btn">Xem chi tiết </button>
           </div>
         ))}
       </div>

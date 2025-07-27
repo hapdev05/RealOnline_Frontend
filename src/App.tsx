@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./page/Homepage";
 import ListBDS from "./page/ListBDS";
@@ -8,6 +7,8 @@ import ListTDC from "./page/ListTDC";
 import SoSanhSp from "./page/SoSanhSP";
 import PhanKhu from "./page/phanKhu";
 import SanPham from "./page/sanPham";
+import Profile from "./page/Profile";
+
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/san-pham" element={<SanPham />} />
         <Route path="/list-tdc" element={<ListTDC />} />
         <Route path="/so-sanh-sp" element={<SoSanhSp />} />
+        <Route path="/profile" element={<Profile />} />
 
       </Routes>
       </MainLayout>

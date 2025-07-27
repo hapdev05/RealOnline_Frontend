@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import './style.css'
+import "./style.css";
 
 interface Props {
   images: string[];
